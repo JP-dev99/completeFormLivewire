@@ -29,7 +29,6 @@
 
     <body>
         @yield('body')
-
         @livewireScripts
     </body>
 </html>
