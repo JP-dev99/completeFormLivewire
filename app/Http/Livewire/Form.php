@@ -10,13 +10,13 @@ class Form extends Component
 {
     public $name;
     public $city;
-    public $marital_status;
-    public $sex;
+    public $marital_status = 'single';
+    public $sex = 'male';
     public $age;
-    public $attends_some_cell;
+    public $attends_some_cell = 'no';
     public $leader_cell;
-    public $baptized;
-    public $is_away;
+    public $baptized = 'no';
+    public $is_away = 'no';
     public $success;
 
     public function submitForm()
@@ -47,7 +47,7 @@ class Form extends Component
         ]);
 
         $this->reset(['name', 'city', 'marital_status', 'sex', 'age', 'attends_some_cell', 'leader_cell', 'baptized', 'is_away']);
-        $this->success = 'O seu formulário foi salvo com sucesso!';
+        $this->success = 'O seu formulário foi enviado com sucesso!';
     }
 
     public function render()

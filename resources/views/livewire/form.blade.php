@@ -3,7 +3,15 @@
         Preencha o formulário abaixo:
     </div>
 
-    <form  wire:submit.prevent="submitForm" class="flex justify-center">
+    <form wire:submit.prevent="submitForm" class="flex justify-center">
+
+        <div class="flex flex-col m-10 gap-4 p-4 border-2 mt-6 rounded-md border-gray-300 w-6/12">
+
+            @if('success')
+            <div class="flex w-full overflow-hidden bg-green-400 rounded-lg shadow-2xl">
+                <span class="w-full font-semibold text-gray-900 text-center">{{$success}}</span>
+            </div>
+            @endif
 
             <div class="flex flex-col">
                 <label for="name" class="text-white mb-2">Nome:</label>
@@ -25,7 +33,7 @@
             <div class="grid grid-cols-2 gap-4">
                 <div class="flex flex-col">
                     <label for="marital_status" class="text-white mb-2">Estado civil:</label>
-                    <select id="marital_status" wire:model.defer="marital_status" class="border-2 border-gray-300 px-3 py-2 w-38 h-10 rounded-lg shadow-sm
+                    <select name="marital_status" id="marital_status"  wire:model.defer="marital_status" class="border-2 border-gray-300 px-3 py-2 w-38 h-10 rounded-lg shadow-sm
                     @error('marital_status') border-red-500 @enderror" >
                         <option value="single">Solteiro</option>
                         <option value="married-in-civil" checked>Casado no Civil</option>
@@ -37,7 +45,7 @@
                 </div>
                 <div class="flex flex-col">
                     <label for="sex" class="text-white mb-2">Sexo:</label>
-                    <select id="sex" wire:model.defer="sex" class="border-2 border-gray-300 px-3 py-2 w-38 h-10 rounded-lg shadow-sm
+                    <select name="sex" id="sex" wire:model.defer="sex" class="border-2 border-gray-300 px-3 py-2 w-38 h-10 rounded-lg shadow-sm
                     @error('sex') border-red-500 @enderror" requaire>
                         <option value="male">Feminino</option>
                         <option value="men">Masculino</option>
@@ -60,7 +68,7 @@
 
             <div class="flex flex-col">
                 <label for="attends_some_cell" class="text-white mb-2">Frequenta alguma célula?</label>
-                <select id="attends_some_cell" wire:model.defer="attends_some_cell" class="border-2 border-gray-300 px-3 py-2 w-38 h-10 rounded-lg shadow-sm
+                <select name="attends_some_cell" id="attends_some_cell" wire:model.defer="attends_some_cell" class="border-2 border-gray-300 px-3 py-2 w-38 h-10 rounded-lg shadow-sm
                 @error('attends_some_cell') border-red-500 @enderror" >
                     <option value="no">Não</option>
                     <option value="yes">Sim</option>
@@ -84,7 +92,7 @@
             <div class="grid grid-cols-2 gap-4">
                 <div class="flex flex-col">
                     <label for="baptized" class="text-white mb-2">É batizado em alguma igreja evangélica?</label>
-                    <select id="baptized" wire:model.defer="baptized" class="border-2 border-gray-300 px-3 py-2 w-38 h-10 rounded-lg shadow-sm
+                    <select name="baptized" id="baptized" wire:model.defer="baptized" class="border-2 border-gray-300 px-3 py-2 w-38 h-10 rounded-lg shadow-sm
                     @error('baptized') border-red-500 @enderror" >
                         <option value="no">Não</option>
                         <option value="yes">Sim</option>
@@ -96,7 +104,7 @@
 
                 <div class="flex flex-col">
                     <label for="is_away" class="text-white mb-2">Está afastado do evangelho?</label>
-                    <select id="is_away" wire:model.defer="is_away" class="border-2 border-gray-300 px-3 py-2 w-38 h-10 rounded-lg shadow-sm
+                    <select name="baptized" id="is_away" wire:model.defer="is_away" class="border-2 border-gray-300 px-3 py-2 w-38 h-10 rounded-lg shadow-sm
                     @error('is_away') border-red-500 @enderror" >
                         <option value="no">Não</option>
                         <option value="yes">Sim</option>
