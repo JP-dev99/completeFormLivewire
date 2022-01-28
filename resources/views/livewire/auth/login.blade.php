@@ -2,10 +2,11 @@
 
 <div>
     <div class="sm:mx-auto sm:w-full sm:max-w-md">
-        <div class="flex justify-center">
-            <img src="https://static.wixstatic.com/media/2550a0_77aa51c3666b407da2f0e2de70e600c8~mv2.png/v1/fill/w_408,h_100,al_c,q_85,usm_2.00_1.00_0.00/C%C3%B3pia%20de%20logo_sintetica_branca%20(2)_edite.webp" alt="Logo.png" width=250 height=150>
-        </div>
-
+        <a href="/form">
+            <div class="flex justify-center">
+                <img src="https://static.wixstatic.com/media/2550a0_77aa51c3666b407da2f0e2de70e600c8~mv2.png/v1/fill/w_408,h_100,al_c,q_85,usm_2.00_1.00_0.00/C%C3%B3pia%20de%20logo_sintetica_branca%20(2)_edite.webp" alt="Logo.png" width=250 height=150>
+            </div>
+        </a>
         <h2 class="mt-6 text-3xl font-extrabold leading-9 text-center text-gray-200">
             Login de administrador
         </h2>
