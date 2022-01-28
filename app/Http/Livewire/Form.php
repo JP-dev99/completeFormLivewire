@@ -28,7 +28,6 @@ class Form extends Component
             'sex' => 'required',
             'age' => 'required',
             'attends_some_cell' => 'required',
-            'leader_cell' => 'required',
             'baptized' => 'required',
             'age' => 'required',
             'is_away' => 'required',
