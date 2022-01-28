@@ -14,7 +14,7 @@ class Form extends Component
     public $sex = 'male';
     public $age;
     public $attends_some_cell = 'no';
-    public $leader_cell;
+    public $leader_cell = 'Não possui';
     public $baptized = 'no';
     public $is_away = 'no';
     public $success;

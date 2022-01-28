@@ -54,7 +54,7 @@
         </main>
         <!-- Main footer -->
         <footer class="flex items-center justify-between flex-shrink-0 p-2 max-h-14">
-            <div class="text-xs font-semibold text-gray-500 dark:text-blue-gray-200">&copy; 2021</div>
+            <div class="text-xs font-semibold text-gray-500  dark:text-blue-gray-200">&copy; 2021</div>
         </footer>
     </div>
 </div>

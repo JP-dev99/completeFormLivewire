@@ -33,6 +33,7 @@ final class VisitorsTable extends PowerGridComponent
         $this->showCheckBox()
             ->showPerPage()
             ->showSearchInput()
+            ->showToggleColumns()
             ->showExportOption('download', ['excel', 'csv']);
     }
 
@@ -80,17 +81,33 @@ final class VisitorsTable extends PowerGridComponent
             ->addColumn('id')
             ->addColumn('name')
             ->addColumn('city')
-            ->addColumn('marital_status')
-            ->addColumn('sex')
+            ->addColumn('marital_status', function(Visitors $model){
+                if ($model->marital_status == 'single') {
+                    return 'Solteiro';
+                } if($model->marital_status == 'married-in-civil'){
+                    return 'Casado';
+                } if($model->marital_status == 'widower'){
+                    return 'Viuvo';
+                };
+            })
+            ->addColumn('sex', function(Visitors $model) {
+                return ($model->sex == 'male') ? 'Masculino' : 'feminino';
+            })
             ->addColumn('age')
-            ->addColumn('attends_some_cell')
+            ->addColumn('attends_some_cell', function(Visitors $model) {
+                return ($model->attends_some_cell == 'yes') ? '<span class="inline-block px-2 py-1 mr-3 text-xs font-bold text-white bg-green-500 rounded">Sim</span>' : '<span class="inline-block px-2 py-1 mr-3 text-xs font-bold text-white bg-red-500 rounded">Não</span>';
+            })
             ->addColumn('leader_cell')
-            ->addColumn('baptized')
-            ->addColumn('is_away')
-            ->addColumn('created_at_formatted', function(Visitors $model) { 
+            ->addColumn('baptized', function(Visitors $model) {
+                return ($model->baptized == 'yes') ? '<span class="inline-block px-2 py-1 mr-3 text-xs bg-green-500 rounded font-boldtext-white ">Sim</span>' : '<span class="inline-block px-2 py-1 mr-3 text-xs font-bold text-white bg-red-500 rounded">Não</span>';
+            })
+            ->addColumn('is_away', function(Visitors $model) {
+                return ($model->is_away == 'yes') ? '<span class="inline-block px-2 py-1 mr-3 text-xs font-bold text-white bg-red-500 rounded">Sim</span>' : '<span class="inline-block px-2 py-1 mr-3 text-xs font-bold text-white bg-green-500 rounded">Não</span>';
+            })
+            ->addColumn('created_at_formatted', function(Visitors $model) {
                 return Carbon::parse($model->created_at)->format('d/m/Y H:i:s');
             })
-            ->addColumn('updated_at_formatted', function(Visitors $model) { 
+            ->addColumn('updated_at_formatted', function(Visitors $model) {
                 return Carbon::parse($model->updated_at)->format('d/m/Y H:i:s');
             });
     }
@@ -112,87 +129,76 @@ final class VisitorsTable extends PowerGridComponent
     public function columns(): array
     {
         return [
-            Column::add()
-                ->title('ID')
-                ->field('id')
-                ->makeInputRange(),
 
             Column::add()
-                ->title('NAME')
+                ->title('Nome')
                 ->field('name')
                 ->sortable()
                 ->searchable()
                 ->makeInputText(),
 
             Column::add()
-                ->title('CITY')
+                ->title('Cidade')
                 ->field('city')
                 ->sortable()
                 ->searchable()
                 ->makeInputText(),
 
             Column::add()
-                ->title('MARITAL STATUS')
+                ->title('Estado civil')
                 ->field('marital_status')
                 ->sortable()
                 ->searchable()
                 ->makeInputText(),
 
             Column::add()
-                ->title('SEX')
+                ->title('Sexo')
                 ->field('sex')
                 ->sortable()
                 ->searchable()
                 ->makeInputText(),
 
             Column::add()
-                ->title('AGE')
+                ->title('Idade')
                 ->field('age')
                 ->sortable()
                 ->searchable()
                 ->makeInputText(),
 
             Column::add()
-                ->title('ATTENDS SOME CELL')
+                ->title('Frequenta alguma célula?')
                 ->field('attends_some_cell')
                 ->sortable()
                 ->searchable()
                 ->makeInputText(),
 
             Column::add()
-                ->title('LEADER CELL')
+                ->title('Líder de célula')
                 ->field('leader_cell')
                 ->sortable()
                 ->searchable()
                 ->makeInputText(),
 
             Column::add()
-                ->title('BAPTIZED')
+                ->title('É batizado?')
                 ->field('baptized')
                 ->sortable()
                 ->searchable()
                 ->makeInputText(),
 
             Column::add()
-                ->title('IS AWAY')
+                ->title('Está afastado do evangelho?')
                 ->field('is_away')
                 ->sortable()
                 ->searchable()
                 ->makeInputText(),
 
             Column::add()
-                ->title('CREATED AT')
+                ->title('Registrado em:')
                 ->field('created_at_formatted', 'created_at')
                 ->searchable()
                 ->sortable()
                 ->makeInputDatePicker('created_at'),
-
-            Column::add()
-                ->title('UPDATED AT')
-                ->field('updated_at_formatted', 'updated_at')
-                ->searchable()
-                ->sortable()
-                ->makeInputDatePicker('updated_at'),
 
         ]
 ;
@@ -304,4 +310,6 @@ final class VisitorsTable extends PowerGridComponent
         return (is_string($message)) ? $message : 'Error!';
     }
     */
+
 }
+
