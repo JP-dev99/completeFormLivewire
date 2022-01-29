@@ -1,6 +1,6 @@
 <div>
-    <div class="mt-16 font-mono font-extrabold text-center text-gray-100">
-        Preencha o formulário abaixo:
+    <div class="mt-12 font-serif text-4xl text-center text-gray-100">
+        Preencha o formulário abaixo
     </div>
 
     <form wire:submit.prevent="submitForm" class="flex justify-center">
@@ -115,7 +115,7 @@
                 </div>
             </div>
             <div class="flex justify-center mt-4">
-                <button class="w-full h-12 col-span-2 text-white bg-green-500 border border-green-500 rounded-lg justify-items-center" type="submit">Enviar</button>
+                <button class="w-full h-12 col-span-2 text-white bg-green-500 border border-green-500 rounded-lg hover:bg-green-400 justify-items-center" type="submit">Enviar</button>
             </div>
         </div>
     </form>
