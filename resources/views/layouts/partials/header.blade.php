@@ -7,32 +7,32 @@
             </div>
             @if (Route::has('login'))
                 <div class="flex">
-                    <div class="px-2 py-1 space-x-4 bg-white border border-white rounded">
-                        @auth
-                            <a href="{{ route('logout') }}"
-                                onclick="event.preventDefault(); document.getElementById('logout-form').submit();"
-                                class="font-medium text-red-500 transition duration-150 ease-in-out hover:text-blue-100 focus:outline-none focus:underline">
-                                Sair
-                            </a>
-                        </div>
-                        <div class="px-2 py-1 bg-white border border-white rounded">
-
+                    @auth
+                        <div class="flex justify-center">
                             <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
                                 @csrf
                             </form>
                             @if (Route::has('register'))
                                 <a href="{{ route('register') }}"
-                                    class="font-medium text-indigo-600 transition duration-150 ease-in-out hover:text-indigo-500 focus:outline-none focus:underline">Registrar
-                                    novo admin</a>
-                            @endif
-                        @else
-                            <a href="{{ route('login') }}"
-                                class="font-medium text-gray-900 transition duration-150 ease-in-out hover:text-indigo-500 focus:outline-none focus:underline">Entrar</a>
+                                    class="px-4 py-2 text-purple-100 bg-purple-700 rounded-full">
+                                    Registrar novo admin
+                                </a>
+                        </div>
 
-                        @endauth
-                    </div>
-                </div>
-            @endif
+                        <div class="flex justify-center ml-4">
+                            
+                                <a href="{{ route('logout') }}"
+                                    onclick="event.preventDefault(); document.getElementById('logout-form').submit();"
+                                    class="px-4 py-2 text-red-100 bg-red-500 rounded-full">
+                                    Sair
+                                </a>
+                        </div>
+                @endif
+            @else
+            <a href="{{ route('login') }}" class="px-4 py-2 mr-2 text-indigo-100 bg-indigo-500 rounded-full">Entrar</a>
+            @endauth
         </div>
+        @endif
+    </div>
     </div>
 </header>
