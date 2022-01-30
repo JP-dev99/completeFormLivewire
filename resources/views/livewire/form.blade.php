@@ -5,7 +5,7 @@
 
     <form wire:submit.prevent="submitForm" class="flex justify-center">
 
-        <div class="flex flex-col w-6/12 gap-4 p-4 m-10 mt-6 border-2 border-gray-300 rounded-md ">
+        <div class="flex flex-col w-6/12 gap-4 p-4 m-10 mt-6 border-2 border-gray-300 rounded-md">
 
             @if ('success')
                 <div class="flex w-full overflow-hidden bg-green-400 rounded-lg shadow-2xl">
