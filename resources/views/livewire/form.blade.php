@@ -1,24 +1,23 @@
 <div>
-    <div class="mt-12 text-2xl text-center text-gray-100 sm:text-4xl">
+    <div class="mt-10 text-2xl text-center text-gray-100 sm:text-4xl">
         Preencha o formulário abaixo
     </div>
 
-        <form wire:submit.prevent="submitForm" class="flexjustify-center ">
+        <form wire:submit.prevent="submitForm" class="flex justify-center">
 
-            <div class="flex flex-col gap-4 p-4 mt-6 sm:border-2 sm:border-gray-300 sm:rounded-md sm:m-10">
+            <div class="flex flex-col gap-4 mt-4 sm:mt-6 sm:p-4 sm:border-2 sm:border-gray-300 sm:rounded-md sm:m-10">
 
                 @if ('success')
-                    <div class="flex w-full overflow-hidden bg-green-400 rounded-lg shadow-2xl">
-                        <span class="w-full font-semibold text-center text-gray-900">{{ $success }}</span>
+                    <div class="flex w-full overflow-hidden bg-green-200 rounded-lg shadow-2xl">
+                        <span class="w-full font-semibold text-center text-green-600">{{ $success }}</span>
                     </div>
                 @endif
 
                 <div class="flex flex-col">
-                    <label for="name" class="mb-2 text-white">Nome:</label>
+                    <label for="name" class="mb-2 text-white sm:text-base">Nome:</label>
                     <input id="name" wire:model="name" type="text" placeholder="Digite seu nome aqui"
-                        class="border-2 border-gray-300 px-3 py-2 w-38 h-10 rounded-lg shadow-sm
+                        class="border-2 border-gray-300 px-3 py-2 w-38 rounded-lg shadow-sm h-10
                 @error('name') border-red-500 @enderror">
-
                     @error('name')
                         <p class="mt-1 text-xs text-red-500 "> {{ $message }} </p>
                     @enderror

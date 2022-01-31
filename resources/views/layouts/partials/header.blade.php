@@ -16,7 +16,7 @@
                             </form>
                             @if (Route::has('register'))
                                 <a href="{{ route('register') }}"
-                                    class="px-4 py-2 text-purple-100 bg-purple-700 rounded-full">
+                                    class="px-4 py-2 text-sm text-center text-purple-100 bg-purple-700 rounded-full min-w-max sm:text-base">
                                     Registrar admin
                                 </a>
                         </div>
@@ -25,7 +25,7 @@
 
                             <a href="{{ route('logout') }}"
                                 onclick="event.preventDefault(); document.getElementById('logout-form').submit();"
-                                class="px-4 py-2 text-red-100 bg-red-500 rounded-full">
+                                class="px-4 py-2 text-sm text-center text-red-100 bg-red-500 rounded-full sm:text-base">
                                 Sair
                             </a>
                         </div>

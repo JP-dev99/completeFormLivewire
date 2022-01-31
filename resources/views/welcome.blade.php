@@ -24,11 +24,11 @@ Formulário de visitante
                         <!-- The tabs navigation -->
                         <nav>
                             <ul class='flex justify-between cursor-pointer'>
-                                <a class="px-4 py-2 mr-2 text-indigo-100 bg-indigo-500 rounded-full"
+                                <a class="px-4 py-2 mr-2 text-sm text-center text-indigo-100 bg-indigo-500 rounded-full sm:text-base"
                                     :class="{ 'active': tab === 'description' }"
                                     @click.prevent="tab = 'description'; window.location.hash = 'description'"
                                     href="#">Cadastrar</a>
-                                <a class="px-4 py-2 text-blue-100 bg-blue-500 rounded-full"
+                                <a class="px-4 py-2 text-sm text-blue-100 bg-blue-500 rounded-full sm:text-base"
                                     :class="{ 'active': tab === 'reviews' }"
                                     @click.prevent="tab = 'reviews'; window.location.hash = 'reviews'" href="#">Visualizar
                                     dados</a>
@@ -51,8 +51,8 @@ Formulário de visitante
                 @endif
             </main>
             <!-- Main footer -->
-            <footer class="flex items-center justify-between flex-shrink-0 p-2 max-h-14">
-                <div class="text-xs font-semibold text-gray-500 dark:text-blue-gray-200">&copy; 2021</div>
+            <footer class="flex justify-center p-2 max-h-14">
+                <div class="text-xs font-semibold text-center text-gray-500 dark:text-blue-gray-200">Vida e paz church &copy; 2022</div>
             </footer>
         </div>
     </div>
