@@ -1,5 +1,9 @@
 @extends('layouts.app')
 
+@section('title')
+Formulário de visitante
+@endsection
+
 
 @section('body')
 

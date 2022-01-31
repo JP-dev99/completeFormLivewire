@@ -17,7 +17,7 @@
                             @if (Route::has('register'))
                                 <a href="{{ route('register') }}"
                                     class="px-4 py-2 text-purple-100 bg-purple-700 rounded-full">
-                                    Registrar novo admin
+                                    Registrar admin
                                 </a>
                         </div>
 
