@@ -88,6 +88,8 @@ final class VisitorsTable extends PowerGridComponent
                     return 'Casado';
                 } if($model->marital_status == 'widower'){
                     return 'Viuvo';
+                } if($model->marital_status == 'divorced'){
+                    return 'Divorciado';
                 };
             })
             ->addColumn('sex', function(Visitors $model) {

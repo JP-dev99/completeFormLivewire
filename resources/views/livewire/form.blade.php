@@ -5,7 +5,7 @@
 
         <form wire:submit.prevent="submitForm" class="flex justify-center">
 
-            <div class="flex flex-col gap-4 mt-4 sm:mt-6 sm:p-4 sm:border-2 sm:border-gray-300 sm:rounded-md sm:m-10">
+            <div class="flex flex-col gap-4 sm:mt-6 sm:p-4 sm:border-2 sm:border-gray-300 sm:rounded-md sm:m-10">
 
                 @if ('success')
                     <div class="flex w-full overflow-hidden bg-green-200 rounded-lg shadow-2xl">
@@ -38,8 +38,9 @@
                             class="border-2 border-gray-300 px-3 py-2 w-38 h-10 rounded-lg shadow-sm
                     @error('marital_status') border-red-500 @enderror">
                             <option value="single">Solteiro</option>
-                            <option value="married-in-civil" checked>Casado no Civil</option>
+                            <option value="married-in-civil">Casado no Civil</option>
                             <option value="widower">Viúvo</option>
+                            <option value="divorced">Divorciado</option>
                         </select>
                         @error('marital_status')
                             <p class="mt-1 text-xs text-red-500 "> {{ $message }} </p>
